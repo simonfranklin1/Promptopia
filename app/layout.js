@@ -1,6 +1,8 @@
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { Navbar, Provider } from "@/components";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: "Promptopia",
@@ -18,7 +20,7 @@ export default function RootLayout({ children }) {
           </div>
           <main className="app">
             <Navbar />
-            {children}
+            <Suspense fallback={<Loading />}>{children}</Suspense>
           </main>
         </Provider>
       </body>
