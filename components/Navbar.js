@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import Link from 'next/link'
-import Logo from '@/public/assets/images/Logo.svg';
+import Logo from '/public/assets/images/logo.svg';
 
 const Navbar = () => {
   const { data: session } = useSession();
