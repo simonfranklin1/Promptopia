@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import Link from 'next/link'
+import Logo from '@/public/assets/images/Logo.svg';
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -22,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href={"/"} className='flex gap-2 flex-center'>
-        <Image src={"/assets/images/Logo.svg"} alt='Promptopia Logo' width={30} height={30} className='object-contain' />
+        <Image src={Logo} alt='Promptopia Logo' width={30} height={30} className='object-contain' />
         <p className="logo_text">
           Promptopia
         </p>
@@ -36,7 +37,7 @@ const Navbar = () => {
                 Criar Publicação
               </Link>
 
-              <button type='button' className='outline_btn' onClick={signOut}>
+              <button type='button' className='outline_btn' onClick={() => signOut({ redirect: '/' })}>
                 Sair
               </button>
 
@@ -70,7 +71,7 @@ const Navbar = () => {
                   <Link href={'/create-prompt'} className='dropdown_link' onClick={() => setToggleDropDown(false)}>
                     Criar Publicação
                   </Link>
-                  <button type='button' className='mt-5 w-full black_btn' onClick={() => (setToggleDropDown(false), signOut())}>
+                  <button type='button' className='mt-5 w-full black_btn' onClick={() => (setToggleDropDown(false), signOut({ redirect: '/' }))}>
                     Sair
                   </button>
                 </div>
