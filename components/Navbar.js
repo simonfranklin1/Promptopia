@@ -37,7 +37,7 @@ const Navbar = () => {
                 Criar Publicação
               </Link>
 
-              <button type='button' className='outline_btn' onClick={() => signOut({ redirect: '/' })}>
+              <button type='button' className='outline_btn' onClick={() => signOut({ callbackUrl: '/' })}>
                 Sair
               </button>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
                   <Link href={'/create-prompt'} className='dropdown_link' onClick={() => setToggleDropDown(false)}>
                     Criar Publicação
                   </Link>
-                  <button type='button' className='mt-5 w-full black_btn' onClick={() => (setToggleDropDown(false), signOut({ redirect: '/' }))}>
+                  <button type='button' className='mt-5 w-full black_btn' onClick={() => (setToggleDropDown(false), signOut({ callbackUrl: '/' }))}>
                     Sair
                   </button>
                 </div>
