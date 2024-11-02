@@ -1,5 +1,5 @@
 # Promptopia
-- Site de notícias feito com Next.js
+- Site de criação e compartilhamento de prompts de IA feito com Nexts.js
 
 ### O usuário pode:
 
